@@ -1,0 +1,27 @@
+@startuml
+actor Пользователь
+actor Модератор 
+
+rectangle Платформа {
+  usecase "Разместить услугу" as post
+  usecase "Найти услугу" as find
+  usecase "Отправить запрос" as request
+  usecase "Оставить отзыв" as review
+  usecase "Блокрует пользователя" as securit
+  usecase "Удаляет запрещенный контент " as del
+  usecase "Редактирует" as reda
+
+}
+
+Пользователь --> post
+Пользователь --> find
+Пользователь --> request
+Пользователь --> review
+Модератор --> securit
+Модератор --> del
+Модератор --> reda
+
+
+
+
+@enduml

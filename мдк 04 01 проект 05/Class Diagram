@@ -1,0 +1,10 @@
+@startuml
+class User
+
+class Service
+
+class Review
+
+User -- Service
+Service -- Review
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+User -> System: Найти услугу
+System -> System: Поиск
+System --> User: Результаты
+User -> System: Отправить запрос
+System --> User: Подтверждение
+@enduml
