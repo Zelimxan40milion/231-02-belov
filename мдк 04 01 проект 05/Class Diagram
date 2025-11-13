@@ -1,10 +1,12 @@
 @startuml
-class User
+class Пользователь
 
-class Service
+class Модератор 
 
-class Review
+class Регистрация
 
-User -- Service
-Service -- Review
+Модератор -- Регистрация
+Регистрация -- Пользователь
+Модератор -- Пользователь
+
 @enduml
