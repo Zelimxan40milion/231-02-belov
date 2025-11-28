@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Автотесты форм аутентификации</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: system-ui, Arial, sans-serif; margin: 0; background: #f4f4f6; color: #1f1f1f; }
+        header { background: #1d3557; color: #fff; padding: 1.5rem; }
+        main { padding: 1.5rem; max-width: 1200px; margin: 0 auto; }
+        .card { background: #fff; border-radius: 10px; padding: 1.5rem; margin-bottom: 1.25rem; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .btn { background: #457b9d; color: #fff; padding: 0.9rem 1.3rem; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; }
+        .btn:hover { background: #35627c; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        th, td { padding: 0.5rem 0.75rem; border-bottom: 1px solid #e1e5ee; text-align: left; }
+        th { background: #f0f4fb; }
+        .status-pass { color: #2a9d8f; font-weight: 600; }
+        .status-fail { color: #e76f51; font-weight: 600; }
+        .status-error { color: #d62828; font-weight: 600; }
+        .status-skip { color: #6c757d; font-weight: 600; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; }
+        .stat { background: #f8fafc; border-radius: 8px; padding: 0.9rem; border: 1px solid #e5e9f2; }
+        .flash { padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 1rem; background: #d8f3dc; color: #1b4332; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Комплексная система автотестов</h1>
+        <p>Регистрация • Вход • Восстановление пароля</p>
+    </header>
+    <main>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
+
+
