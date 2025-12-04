@@ -1,0 +1,15 @@
+{
+  "name": "php-auth-testing-system",
+  "version": "1.0.0",
+  "description": "Комплексная система автоматического тестирования форм аутентификации (регистрация, вход, восстановление пароля) на PHP с веб-интерфейсом и тестовой БД SQLite.",
+  "private": true,
+  "scripts": {
+    "start": "php -S localhost:8000",
+    "test": "php run_tests.php"
+  },
+  "author": "",
+  "license": "UNLICENSED"
+}
+
+
+
