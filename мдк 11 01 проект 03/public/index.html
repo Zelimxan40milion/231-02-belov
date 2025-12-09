@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Studio — адаптивный лендинг</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header" data-header>
+    <div class="brand">
+      <span class="brand__dot"></span>
+      <span class="brand__text">Digital Studio</span>
+    </div>
+    <nav class="nav" data-nav>
+      <a href="#hero" class="nav__link">Главная</a>
+      <a href="#features" class="nav__link">О нас</a>
+      <a href="#projects" class="nav__link">Проекты</a>
+      <a href="#contact" class="nav__link">Контакты</a>
+    </nav>
+    <button class="burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero__bg"></div>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">команда продукта полного цикла</p>
+          <h1>Создаём цифровые решения, которые выглядят и работают точно как в макете.</h1>
+          <p class="lead">Приводим дизайн из Figma в продакшн: адаптив, доступность, скорость загрузки &lt; 3 секунд.</p>
+          <div class="hero__cta">
+            <a class="btn" href="#projects">Наши кейсы</a>
+            <a class="btn btn--ghost" href="#contact">Обсудить проект</a>
+          </div>
+          <div class="hero__stats">
+            <div class="stat">
+              <span class="stat__value">24</span>
+              <span class="stat__label">запущенных проекта</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value">98%</span>
+              <span class="stat__label">сохранение пиксель-перфекта</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value">&lt;3с</span>
+              <span class="stat__label">средняя загрузка</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <div class="card">
+            <img src="./assets/hero.png" alt="Превью макета" class="card__image">
+            <div class="card__body">
+              <p class="card__title">Figma → Code</p>
+              <p class="card__text">Мобильный first, аккуратная типографика, оптимизированные PNG.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted" id="features">
+      <div class="container">
+        <div class="section__header">
+          <p class="eyebrow">что мы делаем</p>
+          <h2>От прототипа до релиза на Node.js сервере</h2>
+          <p class="section__desc">Верстаем по принципу mobile-first, подключаем анимации без просадки производительности и интегрируем серверные API.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <img src="./assets/feature-1.png" alt="Дизайн системы" class="feature__image">
+            <div>
+              <h3>Адаптивные интерфейсы</h3>
+              <p>Готовим сетку и типографику под три брейкпоинта: телефон, планшет, десктоп. Контент и изображения подгружаются в нужном размере.</p>
+            </div>
+          </article>
+          <article class="feature">
+            <img src="./assets/feature-2.png" alt="Интерактив" class="feature__image">
+            <div>
+              <h3>Интерактив без перегруза</h3>
+              <p>Плавные скроллы, аккуратные ховеры, слайдер с управлением и свайпами. Всё работает нативно на тач-устройствах.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container section__header">
+        <p class="eyebrow">кейсы</p>
+        <h2>Показываем проекты в слайдере</h2>
+        <p class="section__desc">Управление кнопками, индикаторами и свайпами. Автопрокрутка с паузой по требованию.</p>
+      </div>
+      <div class="container slider" data-slider>
+        <div class="slider__viewport" data-slider-viewport>
+          <div class="slide is-active">
+            <img src="./assets/project-1.png" alt="Проект 1" class="slide__image">
+            <div class="slide__body">
+              <h3>Маркетплейс услуг</h3>
+              <p>Сложная сетка карточек, адаптивные таблицы и статусы. Критические блоки подгружаются первыми.</p>
+              <ul class="tags">
+                <li>Node</li>
+                <li>Express</li>
+                <li>Vanilla JS</li>
+              </ul>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="./assets/project-2.png" alt="Проект 2" class="slide__image">
+            <div class="slide__body">
+              <h3>Дашборд аналитики</h3>
+              <p>Графики, фильтры и модальные окна. Плавные переходы без рывков благодаря CSS-переменным.</p>
+              <ul class="tags">
+                <li>Chart-ready</li>
+                <li>Dark/Light</li>
+                <li>Performance</li>
+              </ul>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="./assets/project-3.png" alt="Проект 3" class="slide__image">
+            <div class="slide__body">
+              <h3>Лендинг SaaS</h3>
+              <p>Герой с фоновым PNG, CTA-кнопки и социальные доказательства. Скорость загрузки &lt; 3 c.</p>
+              <ul class="tags">
+                <li>Landing</li>
+                <li>SEO</li>
+                <li>Responsive</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slider__controls">
+          <button class="icon-button" data-prev aria-label="Предыдущий слайд">←</button>
+          <div class="slider__dots" data-dots></div>
+          <button class="icon-button" data-next aria-label="Следующий слайд">→</button>
+          <button class="btn btn--ghost btn--small" data-toggle-autoplay aria-pressed="true">Пауза автопрокрутки</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--muted contact" id="contact">
+      <div class="container contact__grid">
+        <div>
+          <p class="eyebrow">контакты</p>
+          <h2>Расскажите о задаче</h2>
+          <p class="section__desc">Оценим сроки и предложим стек под ваш макет. Ответ в течение рабочего дня.</p>
+          <ul class="contact__list">
+            <li><strong>Email:</strong> hello@digital.studio</li>
+            <li><strong>Телефон:</strong> +7 (900) 111-22-33</li>
+            <li><strong>Соцсети:</strong> Dribbble · Behance · Telegram</li>
+          </ul>
+        </div>
+        <form class="contact__form" data-contact-form>
+          <label>
+            <span>Имя</span>
+            <input type="text" name="name" placeholder="Ваше имя" required>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="name@example.com" required>
+          </label>
+          <label>
+            <span>Сообщение</span>
+            <textarea name="message" rows="4" placeholder="Опишите проект" required></textarea>
+          </label>
+          <button type="submit" class="btn">Отправить</button>
+          <p class="form__status" data-form-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <div class="brand">
+          <span class="brand__dot"></span>
+          <span class="brand__text">Digital Studio</span>
+        </div>
+        <p class="footer__text">Делаем адаптивные сайты по макетам Figma и сопровождаем запуск.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#features">О нас</a>
+        <a href="#projects">Проекты</a>
+        <a href="#contact">Контакты</a>
+      </div>
+      <div class="footer__meta">
+        <p>© <span data-year></span> Digital Studio</p>
+        <p>Node.js · Express · PNG-оптимизация</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./scripts.js" defer></script>
+</body>
+</html>

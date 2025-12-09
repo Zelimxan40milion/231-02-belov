@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+  <title id="title">Умный подбор исполнителей</title>
+  <desc id="desc">Иконка-иллюстрация для подбора исполнителей.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" rx="32" fill="#0b1225"/>
+  <rect x="40" y="40" width="720" height="440" rx="28" fill="#111a32" stroke="url(#bg2)" stroke-width="3" opacity="0.7"/>
+  <g stroke="#38bdf8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <circle cx="240" cy="260" r="90"/>
+    <circle cx="520" cy="220" r="70"/>
+    <circle cx="540" cy="340" r="60"/>
+    <path d="M320 220 L440 200"/>
+    <path d="M310 280 L440 320"/>
+  </g>
+  <g fill="#e2e8f0" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" font-weight="700" transform="translate(120 140)">
+    <text x="0" y="-10">Матчинг команд</text>
+    <text x="0" y="28" font-weight="500" font-size="20" opacity="0.8">Опыт, скорость, рейтинг</text>
+  </g>
+</svg>
+
+
+
+

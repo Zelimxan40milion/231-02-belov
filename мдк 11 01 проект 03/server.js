@@ -1,33 +1,57 @@
-const { spawn } = require('child_process');
+const fs = require('fs');
 const path = require('path');
+const express = require('express');
 
+const app = express();
 const host = '127.0.0.1';
 const port = process.env.PORT || 8000;
 const publicDir = path.join(__dirname, 'public');
+const contactLog = path.join(__dirname, 'contact-messages.log');
 
-console.log(`Starting PHP built-in server on http://${host}:${port}`);
+app.use(express.json({ limit: '1mb' }));
 
-const phpServer = spawn(
-  'php',
-  ['-S', `${host}:${port}`, '-t', publicDir],
-  {
-    stdio: 'inherit',
-  }
+// Serve static assets (HTML/CSS/JS/PNG/PHP as static files)
+app.use(
+  express.static(publicDir, {
+    extensions: ['html', 'htm', 'php'],
+    maxAge: '1d',
+  })
 );
 
-phpServer.on('error', (err) => {
-  console.error('Failed to launch PHP server. Is PHP installed and in PATH?', err);
-  process.exit(1);
+// Simple contact endpoint (demo). Stores messages to a local log file.
+app.post('/api/contact', (req, res) => {
+  const { name, email, message } = req.body || {};
+
+  if (!name || !email || !message) {
+    return res.status(400).json({
+      success: false,
+      message: 'Заполните имя, email и сообщение',
+    });
+  }
+
+  const entry = {
+    name,
+    email,
+    message,
+    ip: req.ip,
+    createdAt: new Date().toISOString(),
+  };
+
+  fs.appendFile(contactLog, JSON.stringify(entry) + '\n', (err) => {
+    if (err) {
+      console.error('Не удалось записать сообщение', err);
+      return res.status(500).json({ success: false, message: 'Ошибка сервера' });
+    }
+
+    res.json({ success: true, message: 'Сообщение принято, спасибо!' });
+  });
 });
 
-const shutdown = () => {
-  console.log('\nStopping PHP server…');
-  phpServer.kill();
-  process.exit(0);
-};
+// SPA-style fallback to the main page
+app.get('*', (_req, res) => {
+  res.sendFile(path.join(publicDir, 'index.html'));
+});
 
-process.on('SIGINT', shutdown);
-process.on('SIGTERM', shutdown);
-
-
-
+app.listen(port, host, () => {
+  console.log(`Server running at http://${host}:${port}`);
+});

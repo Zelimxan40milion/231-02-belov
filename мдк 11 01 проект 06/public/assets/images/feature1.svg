@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+  <title id="title">Безопасные сделки</title>
+  <desc id="desc">Иконка-иллюстрация для безопасных сделок.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" rx="32" fill="#0b1225"/>
+  <rect x="40" y="40" width="720" height="440" rx="28" fill="#111a32" stroke="url(#bg)" stroke-width="3" opacity="0.7"/>
+  <g fill="none" stroke="#38bdf8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M180 240c60 30 120 30 180 0 60-30 120-30 180 0 60 30 120 30 180 0"/>
+    <path d="M180 300c60 30 120 30 180 0 60-30 120-30 180 0 60 30 120 30 180 0"/>
+    <path d="M180 360c60 30 120 30 180 0 60-30 120-30 180 0 60 30 120 30 180 0"/>
+  </g>
+  <g fill="#a855f7" opacity="0.9">
+    <circle cx="200" cy="220" r="24"/>
+    <circle cx="380" cy="220" r="24"/>
+    <circle cx="560" cy="220" r="24"/>
+    <circle cx="740" cy="220" r="24"/>
+  </g>
+  <g transform="translate(120 140)" fill="#e2e8f0" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" font-weight="700">
+    <text x="0" y="-10">Эскроу контроль</text>
+    <text x="0" y="28" font-weight="500" font-size="20" opacity="0.8">Гарантия честных сделок</text>
+  </g>
+</svg>
+
+
+
+

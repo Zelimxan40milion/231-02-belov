@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ServiceX | Платформа обмена услугами</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top-nav" id="topNav">
+    <div class="container nav-container">
+      <a class="logo" href="#hero" aria-label="ServiceX — на главную">
+        <img src="assets/images/logo.svg" alt="ServiceX">
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero">Главная</a>
+        <a href="#features">Возможности</a>
+        <a href="#projects">Проекты</a>
+        <a href="#testimonials">Отзывы</a>
+        <a href="#contact">Контакты</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Платформа обмена услугами</p>
+        <h1>Находите и предлагайте услуги в один клик</h1>
+        <p class="lead">Соединяем специалистов и заказчиков, чтобы ваши проекты запускались быстрее.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">Смотреть проекты</a>
+          <a class="btn ghost" href="#contact">Начать сотрудничество</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <strong>12k+</strong>
+            <span>проверенных исполнителей</span>
+          </div>
+          <div>
+            <strong>4.9/5</strong>
+            <span>средний рейтинг проектов</span>
+          </div>
+          <div>
+            <strong>48ч</strong>
+            <span>средний срок подбора</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features section" id="features">
+      <div class="container section-header">
+        <p class="eyebrow">Для бизнеса и фриланса</p>
+        <h2>Прозрачный процесс обмена услугами</h2>
+        <p class="section-lead">Мы собрали инструменты, которые помогают договариваться и закрывать задачи без риска.</p>
+      </div>
+      <div class="container feature-grid">
+        <article class="feature-card">
+          <img src="assets/images/feature1.svg" alt="Безопасные сделки" loading="lazy" decoding="async">
+          <div>
+            <h3>Безопасные сделки</h3>
+            <p>Эскроу-счета и контроль этапов гарантируют, что обе стороны выполнят обязательства.</p>
+          </div>
+        </article>
+        <article class="feature-card">
+          <img src="assets/images/feature2.svg" alt="Подбор исполнителей" loading="lazy" decoding="async">
+          <div>
+            <h3>Умный подбор исполнителей</h3>
+            <p>Алгоритмы учитывают опыт, скорость отклика и отзывы — вы получаете подходящие команды.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="projects section" id="projects">
+      <div class="container section-header">
+        <p class="eyebrow">Кейсы</p>
+        <h2>Результаты наших клиентов</h2>
+        <p class="section-lead">Смотрите, как команды находят друг друга и запускают продукты быстрее.</p>
+      </div>
+      <div class="container slider" id="slider">
+        <div class="slider-track" id="sliderTrack">
+          <article class="slide">
+            <img src="assets/images/project1.svg" alt="Платформа бронирования" loading="lazy" decoding="async">
+            <div class="slide-body">
+              <h3>Платформа бронирования</h3>
+              <p>Дизайн и разработка сервиса аренды площадок. Время запуска: 6 недель.</p>
+            </div>
+          </article>
+          <article class="slide">
+            <img src="assets/images/project2.svg" alt="FinTech мобильное приложение" loading="lazy" decoding="async">
+            <div class="slide-body">
+              <h3>FinTech мобильное приложение</h3>
+              <p>Команда из 4 разработчиков и 1 дизайнера. Рост NPS до 72.</p>
+            </div>
+          </article>
+          <article class="slide">
+            <img src="assets/images/project3.svg" alt="Маркетплейс услуг" loading="lazy" decoding="async">
+            <div class="slide-body">
+              <h3>Маркетплейс услуг</h3>
+              <p>Запуск MVP с платежами и профилями исполнителей за 8 недель.</p>
+            </div>
+          </article>
+        </div>
+        <div class="slider-controls">
+          <button class="slider-btn" data-direction="prev" aria-label="Предыдущий">‹</button>
+          <button class="slider-btn" data-direction="next" aria-label="Следующий">›</button>
+          <button class="slider-toggle" id="sliderToggle" aria-pressed="false" aria-label="Пауза автопрокрутки">⏸</button>
+        </div>
+        <div class="slider-dots" id="sliderDots" aria-label="Индикаторы слайдов"></div>
+      </div>
+    </section>
+
+    <section class="testimonials section" id="testimonials">
+      <div class="container section-header">
+        <p class="eyebrow">Отзывы клиентов</p>
+        <h2>Что говорят о платформе</h2>
+        <p class="section-lead">Бизнес и специалисты отмечают скорость запуска, прозрачность и поддержку.</p>
+      </div>
+      <div class="container testimonial-grid">
+        <article class="testimonial-card">
+          <div class="testimonial-head">
+            <div class="avatar" aria-hidden="true">AV</div>
+            <div>
+              <h3>Анна Воронина</h3>
+              <p class="role">COO, маркетплейс товаров</p>
+            </div>
+          </div>
+          <p class="quote">«Собрали команду за 3 дня, MVP запустили за 7 недель. Понравилась прозрачная коммуникация и платежи через эскроу.»</p>
+          <div class="rating" aria-label="Оценка 5 из 5">★★★★★</div>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-head">
+            <div class="avatar" aria-hidden="true">DM</div>
+            <div>
+              <h3>Дмитрий Максимов</h3>
+              <p class="role">Фаундер, финтех-стартап</p>
+            </div>
+          </div>
+          <p class="quote">«Нашли разработчиков с опытом в платежах и KYC. Запустили пилот, удержание выросло, NPS — до 70+.»</p>
+          <div class="rating" aria-label="Оценка 4.8 из 5">★★★★☆</div>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-head">
+            <div class="avatar" aria-hidden="true">IS</div>
+            <div>
+              <h3>Ирина Смирнова</h3>
+              <p class="role">Руководитель HR</p>
+            </div>
+          </div>
+          <p class="quote">«Удобный подбор по навыкам и отзывам. Сервис сам предложил кандидатов, мы лишь согласовали этапы и сроки.»</p>
+          <div class="rating" aria-label="Оценка 5 из 5">★★★★★</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta section">
+      <div class="container cta-inner">
+        <div>
+          <p class="eyebrow">Готовы к запуску</p>
+          <h2>Обсудим ваш проект за 15 минут</h2>
+          <p class="section-lead">Оставьте заявку — подберём команду, рассчитаем бюджет и предложим первые шаги.</p>
+        </div>
+        <a class="btn primary" href="#contact">Оставить заявку</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="#hero" aria-label="ServiceX — на главную">
+          <img src="assets/images/logo.svg" alt="ServiceX">
+        </a>
+        <p>Платформа для обмена услугами между специалистами и бизнесом.</p>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="mailto:hello@servicex.io">hello@servicex.io</a></li>
+          <li><a href="tel:+78001234567">+7 (800) 123-45-67</a></li>
+          <li>Москва, Пречистенка 12</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Соцсети</h4>
+        <ul class="socials">
+          <li><a href="#">Telegram</a></li>
+          <li><a href="#">VK</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span id="year"></span>
+      <a href="#hero" class="to-top">Наверх ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

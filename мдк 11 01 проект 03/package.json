@@ -1,14 +1,16 @@
 {
-  "name": "php-auth-portfolio",
+  "name": "adaptive-figma-site",
   "version": "1.0.0",
-  "description": "Auth-enabled personal portfolio with PHP, SQLite, and Node launcher",
+  "description": "Адаптивный лендинг по макету Figma с Node/Express сервером",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
 
 

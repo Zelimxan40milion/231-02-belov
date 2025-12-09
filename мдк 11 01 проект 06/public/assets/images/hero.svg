@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">ServiceX hero placeholder</title>
+  <desc id="desc">Градиентный фон для блока героя с текстом ServiceX.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <radialGradient id="r" cx="30%" cy="25%" r="60%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="#0f172a"/>
+  <rect width="1600" height="900" fill="url(#g)" opacity="0.6"/>
+  <rect width="1600" height="900" fill="url(#r)"/>
+  <g fill="#e2e8f0" font-family="Inter, system-ui, -apple-system, Segoe UI, sans-serif" font-weight="700">
+    <text x="80" y="170" font-size="64">ServiceX</text>
+    <text x="80" y="240" font-size="36" font-weight="500">Платформа обмена услугами</text>
+    <text x="80" y="310" font-size="22" font-weight="400" opacity="0.8">Готовые команды, безопасные сделки, быстрые запуски</text>
+  </g>
+  <circle cx="1280" cy="200" r="180" fill="#38bdf8" opacity="0.18"/>
+  <circle cx="1150" cy="380" r="120" fill="#a855f7" opacity="0.2"/>
+  <circle cx="1350" cy="520" r="220" fill="#0ea5e9" opacity="0.12"/>
+</svg>
+
+
+
+
