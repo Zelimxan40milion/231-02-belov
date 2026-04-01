@@ -1,22 +1,15 @@
 {
-  "name": "personal-portfolio-auth",
+  "name": "personal-portfolio-php",
   "version": "1.0.0",
-  "description": "Одностраничное портфолио с аутентификацией, восстановлением пароля и проксированием через Node.js + PHP",
-  "main": "js/server.js",
+  "description": "Портфолио на PHP + SQLite (вход и регистрация). Запуск через встроенный сервер PHP.",
+  "private": true,
   "scripts": {
-    "start": "node js/server.js",
-    "dev": "NODE_ENV=development node js/server.js"
+    "start": "php -S 127.0.0.1:8080 -t .",
+    "dev": "php -S 127.0.0.1:8080 -t .",
+    "init-db": "php php/init_db.php",
+    "test": "echo \"No tests configured\""
   },
+  "keywords": [],
   "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.18.2",
-    "http-proxy-middleware": "^2.0.6"
-  }
+  "license": "MIT"
 }
-
-
-
-
-
-

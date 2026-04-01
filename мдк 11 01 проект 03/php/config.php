@@ -58,8 +58,7 @@ function normalize_phone(string $raw): ?string
     if (strlen($digits) !== 10) {
         return null;
     }
-    $formatted = '+7-' . substr($digits, 0, 3) . '-' . substr($digits, 3, 3) . '-' . substr($digits, 6, 2) . '-' . substr($digits, 8, 2);
-    return $formatted;
+    return '+7-' . substr($digits, 0, 3) . '-' . substr($digits, 3, 3) . '-' . substr($digits, 6, 2) . '-' . substr($digits, 8, 2);
 }
 
 function is_valid_password(string $password): bool
@@ -123,7 +122,6 @@ function count_recent_requests(SQLite3 $db, string $phone): int
 
 function ensure_schema(SQLite3 $db): void
 {
-    // Создание таблиц, если они отсутствуют (аналог init_db.php)
     $db->exec('CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         phone TEXT UNIQUE NOT NULL,
@@ -171,6 +169,5 @@ function send_security_headers(): void
     header('X-Content-Type-Options: nosniff');
     header('Referrer-Policy: strict-origin-when-cross-origin');
     header('X-XSS-Protection: 1; mode=block');
-    header("Content-Security-Policy: default-src \'self\'; style-src \'self\' \'unsafe-inline\'; img-src \'self\' data:; script-src \'self\'; connect-src \'self\'; form-action \'self\'; frame-ancestors \'self\'; base-uri \'self\'");
+    header("Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'");
 }
-

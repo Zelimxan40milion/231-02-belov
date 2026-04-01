@@ -31,9 +31,3 @@ $db->exec('CREATE TABLE IF NOT EXISTS sessions (
 )');
 
 echo "Database initialized at " . DB_PATH . PHP_EOL;
-
-
-
-
-
-

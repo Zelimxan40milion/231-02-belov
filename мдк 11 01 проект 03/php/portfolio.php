@@ -205,7 +205,3 @@ $user = current_user();
     <script src="../js/script.js"></script>
 </body>
 </html>
-
-
-
-

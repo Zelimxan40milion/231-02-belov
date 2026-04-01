@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сервис услуг</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">ServiceHub</div>
+        <div class="header-status" id="auth-status">Гость</div>
+      </div>
+    </header>
+
+    <main class="container main-content">
+      <section class="panel active" id="auth-panel">
+        <h1>Вход регистрация отзывы</h1>
+        <p class="panel-text">
+          Чтобы получить доступ к сайту, сначала зарегистрируйся, затем выполни вход.
+        </p>
+
+        <div class="button-row">
+          <button class="btn primary" type="button" id="open-register">Регистрация</button>
+          <button class="btn" type="button" id="open-login">Вход</button>
+          <button class="btn" type="button" data-target="reviews-view">Отзывы</button>
+        </div>
+
+        <div class="view active" id="auth-placeholder-view">
+          <p class="panel-text">
+            Нажми «Регистрация» или «Вход» — откроется отдельное окно.
+          </p>
+        </div>
+
+        <div class="view" id="reviews-view">
+          <h2>Отзывы</h2>
+          <p class="panel-text">Мнение пользователей о данном сайте: удобно искать и размещать услуги.</p>
+          <button class="btn" type="button" data-back-auth="true">Вернутся</button>
+        </div>
+
+        <div class="view" id="admin-login-view">
+          <form id="admin-login-form" class="form-card">
+            <h2>Вход администратора</h2>
+            <label for="admin-login">Логин</label>
+            <input id="admin-login" name="login" type="text" required />
+            <label for="admin-password">Пароль</label>
+            <input id="admin-password" name="password" type="password" required />
+            <button class="btn primary" type="submit">Войти как админ</button>
+            <p id="admin-login-message" class="message"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="panel" id="app-panel">
+        <h1>Рабочая область</h1>
+        <p class="panel-text" id="guest-hint">
+          Гостевой режим: можно просматривать и искать услуги. Для размещения/редактирования нужен вход.
+        </p>
+
+        <div class="button-row">
+          <button class="btn primary" type="button" data-app-view="search-view">Поиск услуг</button>
+          <button class="btn" id="btn-publish" type="button" data-app-view="publish-view">Размещение услуги</button>
+          <button class="btn" id="btn-history" type="button" data-app-view="history-view">История Услуг</button>
+          <button class="btn" id="btn-edit" type="button" data-app-view="edit-view">Редактировать Услуги</button>
+          <button class="btn danger" id="logout-btn" type="button">Выйти</button>
+        </div>
+
+        <div class="view active" id="search-view">
+          <h2>Поиск услуг</h2>
+          <input id="search-input" type="text" placeholder="Например: ремонт, дизайн, уборка" />
+          <button class="btn" type="button" id="search-btn">Найти</button>
+          <div id="services-list" class="list"></div>
+        </div>
+
+        <div class="view" id="publish-view">
+          <form id="publish-form" class="form-card">
+            <h2>Размещение услуги</h2>
+            <label for="service-title">Название услуги</label>
+            <input id="service-title" name="title" type="text" required />
+            <label for="service-photo">Фото услуги</label>
+            <input id="service-photo" name="photo" type="file" accept="image/*" />
+            <label for="service-description">Описание</label>
+            <textarea id="service-description" name="description" rows="4" required></textarea>
+            <label for="service-price">Цена</label>
+            <input id="service-price" name="price" type="number" min="0" required />
+            <button class="btn primary" type="submit">Разместить услугу</button>
+            <p id="publish-message" class="message"></p>
+          </form>
+        </div>
+
+        <div class="view" id="history-view">
+          <h2>История Услуг</h2>
+          <p class="panel-text">Время и дата последних услуг:</p>
+          <div id="history-list" class="list"></div>
+        </div>
+
+        <div class="view" id="edit-view">
+          <h2>Редактирование и удаление услуг</h2>
+          <div id="edit-list" class="list"></div>
+          <button class="btn" type="button" data-app-view="search-view">Вернутся</button>
+        </div>
+      </section>
+
+      <section class="panel" id="admin-panel">
+        <h1>Панель администратора</h1>
+        <p class="panel-text">Здесь админ может просматривать данные и модерировать услуги.</p>
+        <div class="button-row">
+          <button class="btn primary" type="button" id="admin-refresh-btn">Обновить данные</button>
+          <button class="btn danger" type="button" id="admin-logout-btn">Выйти из админки</button>
+        </div>
+        <div class="view active">
+          <h2>Зарегистрированные пользователи</h2>
+          <div id="admin-users-list" class="list"></div>
+          <h2>Все услуги</h2>
+          <div id="admin-services-list" class="list"></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal hidden" id="auth-modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true" aria-label="Авторизация">
+        <button class="close-modal" id="close-auth-modal" type="button" aria-label="Закрыть окно">×</button>
+
+        <div class="modal-tabs" role="tablist" aria-label="Вход и регистрация">
+          <button class="tab-btn active" type="button" data-auth-tab="login">Вход</button>
+          <button class="tab-btn" type="button" data-auth-tab="register">Регистрация</button>
+        </div>
+
+        <div class="tab-panel active" id="auth-tab-login" role="tabpanel">
+          <form id="login-form" class="form-card">
+            <h2>Вход</h2>
+            <label for="login-email">Почта</label>
+            <input id="login-email" name="email" type="email" required />
+            <label for="login-password">Пароль</label>
+            <input id="login-password" name="password" type="password" required />
+            <button class="btn primary" type="submit">Вход</button>
+            <p id="login-message" class="message"></p>
+          </form>
+        </div>
+
+        <div class="tab-panel" id="auth-tab-register" role="tabpanel">
+          <form id="register-form" class="form-card">
+            <h2>Регистрация</h2>
+            <label for="reg-name">Имя</label>
+            <input id="reg-name" name="name" type="text" required />
+            <label for="reg-email">Почта</label>
+            <input id="reg-email" name="email" type="email" required />
+            <label for="reg-password">Пароль</label>
+            <input id="reg-password" name="password" type="password" minlength="6" required />
+            <button class="btn primary" type="submit">Регистрация</button>
+            <p id="register-message" class="message"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

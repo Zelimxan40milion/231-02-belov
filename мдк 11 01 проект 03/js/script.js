@@ -148,9 +148,3 @@
 
   window.addEventListener('scroll', setActiveLink);
 })();
-
-
-
-
-
-

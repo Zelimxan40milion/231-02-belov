@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $_SESSION['recovery_confirmed'] = false;
                         set_stage('verify');
                         $stage = 'verify';
-                        $demoCode = $codePlain; // demo output
+                        $demoCode = $codePlain;
                         $info = 'Код отправлен (демо-режим — код отображён ниже).';
                     }
                 }
@@ -140,7 +140,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $del->execute();
 
                         unset($_SESSION['recovery_stage'], $_SESSION['recovery_phone'], $_SESSION['recovery_phone_raw'], $_SESSION['recovery_confirmed'], $_SESSION['recovery_record_id']);
-                        header('Location: login.php?reset=1');
+                        header('Location: login.php?reset=1&mode=login');
                         exit;
                     }
                 }
@@ -198,7 +198,7 @@ $csrfToken = generate_csrf_token();
                 <form method="POST" novalidate>
                     <p class="muted">Код отправлен на номер <?= sanitize($_SESSION['recovery_phone'] ?? '') ?>.</p>
                     <label>Код из 6 цифр
-                        <input type="text" name="code" inputmode="numeric" pattern="\\d{6}" required maxlength="6">
+                        <input type="text" name="code" inputmode="numeric" pattern="\d{6}" required maxlength="6">
                     </label>
                     <input type="hidden" name="action" value="verify_code">
                     <input type="hidden" name="csrf_token" value="<?= $csrfToken ?>">
@@ -224,7 +224,3 @@ $csrfToken = generate_csrf_token();
     <script src="../js/script.js"></script>
 </body>
 </html>
-
-
-
-
